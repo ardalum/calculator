@@ -1,47 +1,67 @@
-let add1;
-let addOperator;
-let add2;
+const operators = document.querySelectorAll(".operators");
+const addOperator = document.getElementById("add");
+const subOperator = document.getElementById("subtract");
+const multiOperator = document.getElementById("multiply");
+const divOperator = document.getElementById("divide");
+const numberBTN = document.querySelectorAll(".numbers");
+const screen = document.querySelector(".display");
+const deleteBTN = document.getElementById("delete");
+const clearBTN = document.getElementById("clear");
+const equalsBTN = document.getElementById("equals");
 
-function add(add1, add2) {
-  return add1 + add2;
-}
+let defaultDisplay = "0";
+let currentDisplay = "";
 
-let sub1;
-let subOperator;
-let sub2;
+screen.textContent = defaultDisplay;
 
-function subtract(sub1, sub2) {
+numberBTN.forEach((e) => {
+  e.addEventListener("click", () => {
+    defaultDisplay = "";
+    let clicked = e.textContent;
+    currentDisplay += clicked;
+    screen.textContent = currentDisplay;
+  });
+});
+
+deleteBTN.addEventListener("click", () => {
+  if (currentDisplay > 0) {
+    currentDisplay = currentDisplay.slice(0, -1);
+    screen.textContent = currentDisplay;
+  }
+});
+
+clearBTN.addEventListener("click", (e) => {
+  currentDisplay = "";
+  defaultDisplay = "0";
+  screen.textContent = defaultDisplay;
+});
+
+const add = function (...addition) {
+  for (const adds of addition) {
+    return (add += addition);
+  }
+};
+
+const subtract = function (sub1, sub2) {
   return sub1 - sub2;
-}
+};
 
-let multi1;
-let multiOperator;
-let multi2;
-
-function multiply(multi1, multi2) {
+const multiply = function (multi1, multi2) {
   return multi1 * multi2;
-}
+};
 
-let div1;
-let divOperator;
-let div2;
-
-function divide(div1, div2) {
+const divide = function (div1, div2) {
   return div1 / div2;
-}
+};
 
-function operate(operator, num1, num2) {
+function operate(operator, ...numbers) {
   if (operator == "+") {
     return add(num1, num2);
-  } else if (operator == "-") {
+  } else if (operator == subOperator) {
     return subtract(num1, num2);
-  } else if (operator == "*") {
+  } else if (operator == multiOperator) {
     return multiply(num1, num2);
-  } else if (operator == "/") {
+  } else if (operator == divOperator) {
     return divide(num1, num2);
   }
 }
-
-const ops = operate("*", 2, 3);
-
-console.log(ops);

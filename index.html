@@ -8,29 +8,29 @@
   </head>
   <body>
     <main>
-      <section class="numbers">
+      <section class="container">
+        <div class="display"></div>
         <div class="btn grid-4-cols">
-          <div class="display"><span>3 + 1</span></div>
-          <button class="gridcol1">Clear</button>
-          <button class="gridcol2">
+          <button class="gridcol1" id="clear">Clear</button>
+          <button class="gridcol2" id="delete">
             <ion-icon name="backspace-outline"></ion-icon>
           </button>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>+</button>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>-</button>
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button>*</button>
-          <button>.</button>
-          <button>0</button>
-          <button>=</button>
-          <button>/</button>
+          <button class="numbers">7</button>
+          <button class="numbers">8</button>
+          <button class="numbers">9</button>
+          <button class="operators" id="add">+</button>
+          <button class="numbers">4</button>
+          <button class="numbers">5</button>
+          <button class="numbers">6</button>
+          <button class="operators" id="subtract">-</button>
+          <button class="numbers">1</button>
+          <button class="numbers">2</button>
+          <button class="numbers">3</button>
+          <button class="operators" id="multiply">*</button>
+          <button class="numbers">.</button>
+          <button class="numbers">0</button>
+          <button class="operators" id="equals">=</button>
+          <button class="operators" id="divide">/</button>
         </div>
       </section>
     </main>
