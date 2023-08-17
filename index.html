@@ -3,37 +3,92 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link href="style.css" rel="stylesheet" />
     <title>Calculator</title>
   </head>
   <body>
     <main>
       <section class="container">
-        <div class="display"></div>
+        <div class="display-container">
+          <div class="display last-operation"></div>
+          <div class="display current-operation"></div>
+        </div>
         <div class="btn grid-4-cols">
           <button class="gridcol1" id="clear">Clear</button>
-          <button class="gridcol2" id="delete">
+          <button data-key="Backspace" class="gridcol2" id="delete">
             <ion-icon name="backspace-outline"></ion-icon>
           </button>
-          <button class="numbers">7</button>
-          <button class="numbers">8</button>
-          <button class="numbers">9</button>
-          <button class="operators" id="add">+</button>
-          <button class="numbers">4</button>
-          <button class="numbers">5</button>
-          <button class="numbers">6</button>
-          <button class="operators" id="subtract">-</button>
-          <button class="numbers">1</button>
-          <button class="numbers">2</button>
-          <button class="numbers">3</button>
-          <button class="operators" id="multiply">*</button>
-          <button class="numbers">.</button>
-          <button class="numbers">0</button>
-          <button class="operators" id="equals">=</button>
-          <button class="operators" id="divide">/</button>
+          <button data-key="Numpad7" class="numbers key">7</button>
+          <button data-key="Numpad8" class="numbers key">8</button>
+          <button data-key="Numpad9" class="numbers key">9</button>
+          <button data-key="NumpadAdd" class="operators key" id="add" value="+">
+            +
+          </button>
+          <button data-key="Numpad4" class="numbers key">4</button>
+          <button data-key="Numpad5" class="numbers key">5</button>
+          <button data-key="Numpad6" class="numbers key">6</button>
+          <button
+            data-key="NumpadSubtract"
+            class="operators key"
+            id="subtract"
+            value="-"
+          >
+            -
+          </button>
+          <button data-key="Numpad1" class="numbers key">1</button>
+          <button data-key="Numpad2" class="numbers key">2</button>
+          <button data-key="Numpad3" class="numbers key">3</button>
+          <button
+            data-key="NumpadMultiply"
+            class="operators key"
+            id="multiply"
+            value="*"
+          >
+            *
+          </button>
+          <button data-key="NumpadDecimal" class="numbers key">.</button>
+          <button data-key="Numpad0" class="numbers key">0</button>
+          <button data-key="NumpadEnter" class="equals" id="equals" value="=">
+            =
+          </button>
+          <button
+            data-key="NumpadDivide"
+            class="operators key"
+            id="divide"
+            value="/"
+          >
+            /
+          </button>
         </div>
       </section>
     </main>
+
+    <footer>
+      <div class="icons">
+        <a href="https://www.facebook.com/arvin109" target="_blank"
+          ><ion-icon name="logo-facebook"></ion-icon
+        ></a>
+        <a href="https://www.instagram.com/paac.ka/" target="_blank"
+          ><ion-icon name="logo-instagram"></ion-icon
+        ></a>
+        <a href="https://twitter.com/ardalump" target="_blank"
+          ><ion-icon name="logo-twitter"></ion-icon
+        ></a>
+        <a href="https://www.linkedin.com/in/arvin-dalumpines/" target="_blank"
+          ><ion-icon name="logo-linkedin"></ion-icon
+        ></a>
+        <a href="https://github.com/ardalum" target="_blank"
+          ><ion-icon name="logo-github"></ion-icon
+        ></a>
+      </div>
+      <div class="copy">
+        <p class="copyright">
+          Copyright &copy; <span class="year">2023</span> by Arvin Dalumpines
+          All rights reserved
+        </p>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
     <script
