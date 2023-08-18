@@ -126,7 +126,7 @@ function operate() {
     result = add(firstNum, secondNum);
     firstNum = result;
     currentDisplay = "";
-    screen.textContent = result;
+    screen.textContent = result.toFixed(2);
     lastOperation.textContent = `${lastNum} + ${secondNum} =`;
     secondNum = 0;
   } else if (storedOperator == subOperator) {
@@ -135,7 +135,7 @@ function operate() {
     result = subtract(firstNum, secondNum);
     firstNum = result;
     currentDisplay = "";
-    screen.textContent = result;
+    screen.textContent = result.toFixed(2);
     lastOperation.textContent = `${lastNum} - ${secondNum} =`;
     secondNum = 0;
   } else if (storedOperator == multiOperator) {
@@ -144,7 +144,7 @@ function operate() {
     result = multiply(firstNum, secondNum);
     firstNum = result;
     currentDisplay = "";
-    screen.textContent = result;
+    screen.textContent = result.toFixed(2);
     lastOperation.textContent = `${lastNum} * ${secondNum} =`;
     secondNum = 0;
   } else if (storedOperator == divOperator) {
@@ -153,7 +153,7 @@ function operate() {
     result = divide(firstNum, secondNum);
     firstNum = result;
     currentDisplay = "";
-    screen.textContent = result;
+    screen.textContent = result.toFixed(2);
     lastOperation.textContent = `${lastNum} / ${secondNum} =`;
     secondNum = 0;
   }
