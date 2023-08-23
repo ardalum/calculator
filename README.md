@@ -12,9 +12,6 @@ Table of Contents
 - Features
 - Techniques
 - Usage
-- Installation
-- Contributing
-- License
 
 ## Demo
 
