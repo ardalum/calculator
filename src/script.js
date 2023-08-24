@@ -117,6 +117,8 @@ function operatorFunc(event) {
   }
 }
 
+// TODO: Refactor the operate() DRY principle ('Don't Repeat Yourself')
+
 //This function will run when the equals button is clicked, or when more than one operator is clicked before clicking the equals button
 function operate() {
   //the current display is a node string, it will be converted to number and pass it to the secondNum
