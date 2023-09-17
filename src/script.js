@@ -116,46 +116,46 @@ function operatorFunc(event) {
     lastOperation.textContent = `${firstNum}${selectedOperator}`;
   }
 }
+function formatNumberWithDecimal() {
+  if (result % 1 !== 0) {
+    screen.textContent = result.toFixed(2);
+  } else {
+    screen.textContent = result;
+  }
+}
+
+function updateDisplay() {
+  lastNum = firstNum;
+  firstNum = result;
+  currentDisplay = "";
+  formatNumberWithDecimal();
+}
 
 // TODO: Refactor the operate() DRY principle ('Don't Repeat Yourself')
+//TODO: Refactor it using SWITCH
 
 //This function will run when the equals button is clicked, or when more than one operator is clicked before clicking the equals button
 function operate() {
   //the current display is a node string, it will be converted to number and pass it to the secondNum
   secondNum = Number(currentDisplay);
   if (storedOperator === addOperator) {
-    lastNum = firstNum;
     result = add(firstNum, secondNum);
-    firstNum = result;
-    currentDisplay = "";
-    screen.textContent = result.toFixed(2);
+    updateDisplay();
     lastOperation.textContent = `${lastNum} + ${secondNum} =`;
     secondNum = 0;
   } else if (storedOperator == subOperator) {
-    subtract(firstNum, secondNum);
-    lastNum = firstNum;
     result = subtract(firstNum, secondNum);
-    firstNum = result;
-    currentDisplay = "";
-    screen.textContent = result.toFixed(2);
+    updateDisplay();
     lastOperation.textContent = `${lastNum} - ${secondNum} =`;
     secondNum = 0;
   } else if (storedOperator == multiOperator) {
-    multiply(firstNum, secondNum);
-    lastNum = firstNum;
     result = multiply(firstNum, secondNum);
-    firstNum = result;
-    currentDisplay = "";
-    screen.textContent = result.toFixed(2);
+    updateDisplay();
     lastOperation.textContent = `${lastNum} * ${secondNum} =`;
     secondNum = 0;
   } else if (storedOperator == divOperator) {
-    divide(firstNum, secondNum);
-    lastNum = firstNum;
     result = divide(firstNum, secondNum);
-    firstNum = result;
-    currentDisplay = "";
-    screen.textContent = result.toFixed(2);
+    updateDisplay();
     lastOperation.textContent = `${lastNum} / ${secondNum} =`;
     secondNum = 0;
   }
