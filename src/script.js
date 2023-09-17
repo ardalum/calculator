@@ -53,9 +53,13 @@ function numberSelected(e) {
 
 // this will delete one number at a time
 deleteBTN.addEventListener("click", () => {
-  if (currentDisplay > 0) {
+  if (currentDisplay.length > 1) {
     currentDisplay = currentDisplay.slice(0, -1);
     screen.textContent = currentDisplay;
+  } else {
+    defaultDisplay = "0";
+    screen.textContent = defaultDisplay;
+    currentDisplay = "";
   }
 });
 
