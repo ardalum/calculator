@@ -135,33 +135,39 @@ function updateDisplay() {
   formatNumberWithDecimal();
 }
 
-// TODO: Refactor the operate() DRY principle ('Don't Repeat Yourself')
-//TODO: Refactor it using SWITCH
-
 //This function will run when the equals button is clicked, or when more than one operator is clicked before clicking the equals button
 function operate() {
   //the current display is a node string, it will be converted to number and pass it to the secondNum
   secondNum = Number(currentDisplay);
-  if (storedOperator === addOperator) {
-    result = add(firstNum, secondNum);
-    updateDisplay();
-    lastOperation.textContent = `${lastNum} + ${secondNum} =`;
-    secondNum = 0;
-  } else if (storedOperator == subOperator) {
-    result = subtract(firstNum, secondNum);
-    updateDisplay();
-    lastOperation.textContent = `${lastNum} - ${secondNum} =`;
-    secondNum = 0;
-  } else if (storedOperator == multiOperator) {
-    result = multiply(firstNum, secondNum);
-    updateDisplay();
-    lastOperation.textContent = `${lastNum} * ${secondNum} =`;
-    secondNum = 0;
-  } else if (storedOperator == divOperator) {
-    result = divide(firstNum, secondNum);
-    updateDisplay();
-    lastOperation.textContent = `${lastNum} / ${secondNum} =`;
-    secondNum = 0;
+
+  switch (storedOperator) {
+    case addOperator:
+      result = add(firstNum, secondNum);
+      updateDisplay();
+      lastOperation.textContent = `${lastNum} + ${secondNum} =`;
+      secondNum = 0;
+      break;
+
+    case subOperator:
+      result = subtract(firstNum, secondNum);
+      updateDisplay();
+      lastOperation.textContent = `${lastNum} - ${secondNum} =`;
+      secondNum = 0;
+      break;
+
+    case multiOperator:
+      result = multiply(firstNum, secondNum);
+      updateDisplay();
+      lastOperation.textContent = `${lastNum} * ${secondNum} =`;
+      secondNum = 0;
+      break;
+
+    case divOperator:
+      result = divide(firstNum, secondNum);
+      updateDisplay();
+      lastOperation.textContent = `${lastNum} / ${secondNum} =`;
+      secondNum = 0;
+      break;
   }
 }
 
